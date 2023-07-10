@@ -18,5 +18,5 @@
 <br>
 
 ## 📌 Java Teck Interview
-- JVM
-- GC
+- [JVM](https://github.com/kimyubi/TIL-Teck-Interview/blob/main/Java/%5BJava%5D%20JVM.md)
+- [GC](https://github.com/kimyubi/TIL-Teck-Interview/blob/main/Java/%5BJava%5D%20Garbage_Collector.md)
