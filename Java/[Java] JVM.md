@@ -2,71 +2,67 @@
 
 
 <details>
-<summary><strong>💡 JVM의 역할에 대해 설명해주세요.</strong></summary>
+<summary><strong><h3> 💡 JVM의 역할에 대해 설명해주세요.</h3></strong></summary>
 <div markdown="1">
-<br>
 
-1. 자바 소스 코드(.java)를 컴파일 하면, 자바 바이트 코드(.class)가 생성되는데 <strong>JVM</strong>은 바이트 코드를 각 운영체제(자바 프로그램을 실행하는 환경)가 이해할 수 있는 기계어로 변환한다.  
-    ▶ 이는, 운영체제마다 바이트 저장 방식이 다르기 때문이다.
-<br>
+1. 자바 소스 코드를 컴파일 하면, 자바 바이트 코드가 생성되는데,  
+    <strong>JVM</strong>은 <strong>바이트 코드</strong>를 각 운영체제(자바 프로그램을 실행하는 환경)가 이해할 수 있는 <strong>기계어</strong>로 변환한다.  <br>
+   => 이는, 운영체제마다 바이트 저장 방식이 다르기 때문이다.
 
-2. <strong>JVM</strong>은 <u>Garbage Collection</u>을 통해 자동으로 메모리 관리를 수행한다.
+2. <strong>JVM</strong>은 <strong>Garbage Collection</strong>을 통해 자동으로 메모리 관리를 수행한다.
+<br><br>
 
 </div>
 </details>
 
-<br>
 
 <details>
-<summary><strong> 💡 JVM을 사용함으로써 얻을 수 있는 장점과 단점에 대해 설명해 주세요.</strong></summary>
+<summary><strong><h3> 💡 JVM을 사용함으로써 얻을 수 있는 장점과 단점에 대해 설명해 주세요.</h3></strong></summary>
 <div markdown="1">  
 
 <br>
 <strong> ✅ 장점</strong>  
-<br>    
 
-- JVM 위에서 실행되는 JVM 언어(Java, Kotlin, Scala ...)는 <u>운영체제로부터 독립적으로 프로그램을 실행</u>할 수 있다.  
-
-
-- Garbage Collector가 메모리 관리를 대신 해주기 때문에
-자바 프로세스가 한정된 메모리를 효율적으로 사용할 수 있어서 개발자는 개발에만 집중할 수 있다.
+- JVM 위에서 실행되는 JVM 언어(Java, Kotlin, Scala ...)는 운영체제로부터 독립적으로 프로그램을 실행할 수 있다.     
+- Garbage Collector가 메모리 관리를 대신 해주기 때문에 자바 프로세스가 한정된 메모리를 효율적으로 사용할 수 있어서 개발자는 개발에만 집중할 수 있다.
 
 <br>
 <strong> ✅ 단점</strong>  
 <br>  
 
-- Java 프로그램은 JVM이라는 하나의 단계를 더 거치기 때문에, <u>상대적으로 실행 속도가 느리다.</u>  
-    ▶ 이러한 단점을 보완하기 위해 **JIT 컴파일러**를 사용해 성능을 향상 시켰지만, C언어의 실행 속도에는 미치지 못한다.
+- Java 프로그램은 JVM이라는 하나의 단계를 더 거치기 때문에, <strong>상대적으로 실행 속도가 느리다.</strong>
 
--  Garbage Collector가 메모리 관리를 대신 해주기 때문에 개발자는 메모리가 언제 해제되는지 정확히 알 수 없어 제어하기 힘들다.
+    =>  이러한 단점을 보완하기 위해 JIT 컴파일러를 사용해 성능을 향상 시켰지만, C언어의 실행 속도에는 미치지 못한다.  <br>
 
+- Garbage Collector가 메모리 관리를 대신 해주기 때문에 개발자는 메모리가 언제 해제되는지 정확히 알 수 없어 제어하기 힘들다.  
 - GC가 동작하는 동안에는 다른 동작을 멈추기 때문에 오버헤드 <strong><u>(Stop The World)</u></strong>가 발생한다.
+
+<br>
 
 </div>
 </details>
 
 
-<br>
-
 <details>
-<summary><strong> 💡 JVM 메모리 구조에 대해 설명해 주세요.</strong></summary>
+<summary><strong><h3> 💡 JVM 메모리 구조에 대해 설명해 주세요.</h3></strong></summary>
 <div markdown="1">  
 <br>
 
 - ### <strong> 📌 Method 영역 </strong>  
-    **바이트 코드**를 처음 메모리 공간에 올릴 때 **초기화되는 대상**을 저장하기 위한 메모리 공간이다.
-
+    **바이트 코드**를 처음 메모리 공간에 올릴 때 **초기화되는 대상**을 저장하기 위한 메모리 공간이다.  
     JVM이 동작하고 클래스가 로드될 때 할당되어서, **프로그램이 종료될 때까지** 유지된다.
-    <hr>
+  
     <br>
-
+    <br>
     <u>모든 스레드가 공유하는 영역</u>으로, 다음과 같은 정보가 저장된다.
 
     ✅ **Field Info** : 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보  
     ✅ **Method Info**: 메소드의 이름, 반환 타입, 매개 변수, 접근 제어자 정보  
     ✅ **Type Info**: Class인지 Interface인지 여부 저장, Type의 속성/이름, Super Class의 이름
 
-    <code> 즉, 정적 변수와 .class 파일의 정보를 저장한다. </code>
+    <code><strong> 즉, 정적 변수와 .class 파일의 정보를 저장한다. </strong></code>
+    <br>
+    <br>
 
     <details>
     <summary><strong> [Runtime Constant Pool]</strong></summary>
@@ -87,19 +83,22 @@
     <br>
 
 - ### <strong> 📌 Stack 영역 </strong>  
-    <u>기본 자료형으로 생성된 지역 변수</u>가 저장되는 영역이다.
-
-    메소드 호출 시마다 각각의 스택 프레임이 생성되어 `지역 변수`, `매개 변수`, `반환 값` 을 임시로 저장했다가, 메소드의 수행이 끝나면 프레임이 삭제된다.
-
+    <u>기본 자료형으로 생성된 지역 변수</u>가 저장되는 영역이다.  
     스택 영역은 각 스레드마다 존재하며, <strong>스레드가 시작될 때 할당된다.</strong>
 
     <br>
+    메소드 호출 시마다 각각의 스택 프레임이 생성되어 `지역 변수`, `매개 변수`, `반환 값` 을 임시로 저장했다가, 메소드의 수행이 끝나면 프레임이 삭제된다.
 
-- ### <strong> 📌 Heap 영역 </strong>  
-  JVM이 관리하는 프로그램 상에서 데이터를 저장하기 위해 <u>런타임 시 동적으로 할당</u>하여 사용하는 영역으로, 모든 스레드에 공유된다.
-  <hr>
-  <br>
-  <br>
+    
+
+    <br>
+    <br>
+    
+
+- ### <strong> 📌 Heap 영역 </strong>
+  
+  JVM이 관리하는 프로그램 상에서 데이터를 저장하기 위해 <strong>런타임 시 동적으로 할당</strong>하여 사용하는 영역으로, 모든 스레드에 공유된다.
+
 
   - **new 연산자**로 생성되는 객체가 저장된다.
 
@@ -114,15 +113,15 @@
 - ### <strong> 📌 PC 레지스터 </strong>  
   
      현재 수행중인 JVM 명령어 주소를 저장하는 공간으로, 스레드가 어떤 부분을 무슨 명령으로 실행해야할 지에 대한 기록을 가지고 있다.
-
-    <u>스레드가 시작될 때</u> 생성된다.
+     <strong>스레드가 시작될 때</strong> 생성된다.
+     <br>
+     <br>
 
 </div>
 </details>
 
-<br>
 <details>
-<summary><strong>💡 Java 프로그램 실행 과정에 대해 설명해주세요.</strong></summary>
+<summary><strong><h3>💡 Java 프로그램 실행 과정에 대해 설명해주세요.</h3></strong></summary>
 <div markdown="1">
 <br>
 
