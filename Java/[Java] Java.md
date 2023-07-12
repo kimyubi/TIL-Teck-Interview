@@ -291,14 +291,9 @@ effectively final 변수는 final 키워드가 붙어있지 않았지만 final �
 
 <br>
 
-### 📌hashCode() 를 잘못 오버라이딩하면 Hash Collection의 성능이 떨어질 수가 있습니다. 어떤 케이스일 때 그럴 수 있을까요?
- 
-<br>
+### 📌hashCode() 를 잘못 오버라이딩하면 Hash Collection의 성능이 떨어질 수가 있습니다. <br> &nbsp; &nbsp; &nbsp;어떤 케이스일 때 그럴 수 있을까요?
 
-equals()만 오버라이딩 한 경우,
-
-    두 객체가 equals()로 동등하지만 hashCode() 값이 다르다면 서로 다른 버킷에 저장될 수 있다.
-
+    equals()만 오버라이딩 한 경우, 두 객체가 equals()로 동등하지만 hashCode() 값이 다르다면 서로 다른 버킷에 저장될 수 있다.  
     ➡ 버킷에 저장되는 객체의 수 증가 
     ➡ equals() 비교를 수행하는 불필요한 연산도 증가
     ➡ Hash Collection의 조회 성능 저하
@@ -331,9 +326,9 @@ Hash Collection은 **<key, value>** 형태로 데이터를 저장한다.
 
 <br>
 
-- jdk 8 이후: Linked List와 Red Black Tree를 활용한다.
-(충돌 개수가 8개 초과이면 Tree로 변경
- 충돌 개수가 6개 미만이면 Linked List로 변경)
+- jdk 8 이후: Linked List와 Red Black Tree를 활용한다.  
+(충돌 개수가 8개 초과이면 Tree로 변경,    
+ &nbsp; 충돌 개수가 6개 미만이면 Linked List로 변경)
 
 ![Alt text](image-5.png)
 
@@ -341,6 +336,8 @@ Hash Collection은 **<key, value>** 형태로 데이터를 저장한다.
 <br>
 
 버킷의 특정 인덱스에 해시 충돌이 존재하는 경우, **`equals()`** 메소드가 사용된다.
+
+<br>
 
 ✅ 해시 충돌 상황에서, 객체를 삽입하는 경우
 
@@ -354,6 +351,10 @@ Hash Collection은 **<key, value>** 형태로 데이터를 저장한다.
 - equals()가 true인 객체가 있다면 해당 객체를 반환한다.  
 - equals()가 true인 객체가 없다면, null을 반환한다.  
 
+<br>
+<br>
+<br>
+
 </div>
 </details>
 
@@ -362,7 +363,7 @@ Hash Collection은 **<key, value>** 형태로 데이터를 저장한다.
 
 
 <details>
-<summary><strong><h3> 💡 String과 StringBuilder/StringBuffer의 차이는 무엇일까요?  </h3></strong></summary>
+<summary><strong><h3> 💡 String과 StringBuffer의/StringBuilder의 차이는 무엇일까요?  </h3></strong></summary>
 <div markdown="1">
 
 <br>
@@ -378,15 +379,14 @@ Hash Collection은 **<key, value>** 형태로 데이터를 저장한다.
 <br>
 
 String 자료형 만으로도, +연산이나 concat()으로 문자열을 추가할 수 있다.   
-하지만, 기본적으로 **String 객체는 불변 클래스**이기 때문에 concat()은 동작 수행 후 매번 새로운 String 인스턴스를 반환하고, 이는 자원 낭비와 성능 저하를 야기한다.
+하지만, 기본적으로 **String 객체는 불변 클래스**이기 때문에 concat()은 동작 수행 후 매번 새로운 String 인스턴스를 반환하고,  
+이는 자원 낭비와 성능 저하를 야기한다.
 
 <br>
 
-StringBuffer나 StringBuilder의 경우 버퍼의 크기를 유연하게 조절하는 **가변 클래스**이다.
-
-두 클래스는 내부적으로 버퍼(buffer)라고 하는 독립적인 공간을 가지기 때문에 버퍼 내에서 문자열 연산을 할 수 있도록 설계되어 있다.
-
-따라서, 자원 낭비가 없고, 연산 속도도 매우 빠르다는 특징이 있다.
+StringBuffer나 StringBuilder의 경우 버퍼의 크기를 유연하게 조절하는 **가변 클래스**이다.  
+두 클래스는 내부적으로 버퍼(buffer)라고 하는 독립적인 공간을 가지기 때문에 버퍼 내에서 문자열 연산을 할 수 있도록 설계되어 있다.  
+따라서, 자원 낭비가 없고, 연산 속도도 매우 빠르다는 특징이 있다.  
 </div>
 </details>
 
@@ -398,12 +398,11 @@ StringBuffer나 StringBuilder의 경우 버퍼의 크기를 유연하게 조절�
 
 StringBuffer나 StringBuilder를 생성할 경우, buffer의 크기를 지정해줘야 한다.
 
-StringBuffer나 StringBuilder에서 문자열 연산을 할 경우, 마찬가지로 버퍼의 크기를 조절하는 내부적인 연산이 필요하므로 많은 양의 문자열 수정이 아니라면 String 객체를 사용하는것이 오히려 나을 수 있다.
-
+StringBuffer나 StringBuilder에서 문자열 연산을 할 경우, 마찬가지로 버퍼의 크기를 조절하는 내부적인 연산이 필요하므로,  
+많은 양의 문자열 수정이 아니라면 String 객체를 사용하는것이 오히려 나을 수 있다.  
 또한, String 클래스는 크기가 고정되어 있으므로 단순한 조회 연산에서는 StringBuffer나 StringBuilder 클래스보다 빠르다.
 
-즉, 문자열 연산 작업이 많을 경우에는 StringBuffer나 StringBuilder를,   
-그렇지 않은 경우에는 String을 사용하는 것이 좋다.
+즉, 문자열 연산 작업이 많을 경우에는 StringBuffer나 StringBuilder를, 그렇지 않은 경우에는 String을 사용하는 것이 좋다.
 </div>
 </details>
 
@@ -434,7 +433,7 @@ synchronized 키워드는 여러 스레드가 동시에 공유 자원에 접근�
 <br>
 <br>
 
-### 📌왜 동기화(synchronized)가 걸려있으면 느린걸까요?
+### 📌 왜 동기화(synchronized)가 걸려있으면 느린걸까요?
 <br>
 
 동기화된 코드 블록이나 메서드는 여러 스레드 간에 상호배제를 위해 <strong>락(lock)</strong>을 사용한다.
@@ -448,17 +447,14 @@ synchronized 키워드는 여러 스레드가 동시에 공유 자원에 접근�
 ### 📌 싱글 스레드로 접근한다는 가정하에선 "StringBuffer" 와 "StringBuilder" 의 성능이 똑같을까요?
     
 <br>    
-싱글 스레드 환경에서도 동기화 작업은 다음과 같은 이유로 추가적인 오버헤드를 초래할 수 있다.
+
+
+싱글 스레드에서는 스레드 간의 경합이 발생하지 않지만, synchronized 키워드로 동기화된 블록에 진입할 경우,  
+<strong>여전히 락을 획득하고 작업을 수행한 후 락을 반환하는 과정</strong>을 거치기 때문에 추가적인 <strong>오버헤드</strong>를 초래한다.
 
 <br>
 
-- 싱글 스레드에서 동기화된 코드 블록이나 메소드에 접근하는 경우에도, 해당 블록의 락(lock)을 획득하고 반환하는 작업이 여전히 수행된다.   
-
-- 싱글 스레드에서는 스레드 간의 경합이 발생하지 않지만, synchronized 키워드로 동기화된 블록에 진입하여 락을 획득하고 작업을 수행한 후 락을 반환하는 과정을 거친다.
-
-<br>
-
-🔥 즉, 싱글 스레드 환경에서는 StringBuilder의 성능이 더 좋다.
+🔥 따라서, 싱글 스레드 환경에서는 StringBuilder의 성능이 더 좋다.
 
 <br>
 
