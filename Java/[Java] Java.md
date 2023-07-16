@@ -783,3 +783,100 @@ syncronized 블록은 임계 영역이므로, **다른 스레드 역시 해당 �
 
 </div>
 </details>
+
+
+<details>
+<summary><strong><h3> 💡 Java에서 String이 불변으로 설계된 이유에 대해 설명해주세요. </h3></strong></summary>
+<div markdown="1">
+
+
+### 1️⃣ **String Constant Pool**
+
+Java에서 String은 자주 사용되는 자료형이다.
+
+따라서, Java에서는 JVM에 **String Constant Pool**이라는 독립적인 영역을 만들어 문자열 리터럴을 저장한다.   
+Java에서 문자열은 불변이기 때문에, JVM은 각 문자열 리터럴의 복사본 하나만 **String Constant Pool**에 저장하여 문자열에 할당된 메모리 양을 최적화 한다.
+
+**`문자열 리터럴을 캐싱하고 재사용`** 하면 **힙 공간을 많이 절약**하고, 성능 상의 이점을 얻을 수 있다.
+
+![Alt text](<Untitled (18).png>)
+
+
+### 2️⃣ **보안**
+
+String 자료형은 사용자 이름, 암호, 연결 URL, 네트워크 연결 등과 같은 민감한 정보를 저장하기 위해 Java 애플리케이션에서 널리 사용 되고 있다.   
+
+따라서, 만일 String 객체가 불변이 아니라면 **보안 상의 큰 문제를 야기**할 수 있다.
+
+
+### 3️⃣ **Thread-safe**
+
+String 객체는 불변 객체로, 내부 상태를 변경할 수 없으므로, 동시에 여러 스레드가 해당 객체에 접근하더라도 스레드 간의 동기화 문제가 발생하지 않는다. 따라서 추가적인 동기화 메커니즘을 구현할 필요가 없어진다.  
+
+스레드가 문자을 변경하면 문자열 리터럴을 수정하는 대신 **String Constant Pool**에 새 문자열 리터럴이 생성되기 때문에 스레드 안전성을 보장할 수 있다.
+
+
+<br>
+<br>
+
+### 📌 new String()과 리터럴 문자열("")의 차이에 대해 설명해주세요.
+
+    new String()은 새로운 문자열 객체를 힙 영역에 할당한다.  
+    리터럴 문자열("")은 힙 영역 내부의 String Constant Pool에 저장된다.  
+
+    new String()은 새로운 String 객체를 생성한다.  
+    리터럴 문자열("")은 이미 String Constant Pool에 있는 동일한 값을 가진 문자열을 참조한다.  
+
+    new String()은 객체를 생성하는 추가적인 오버헤드가 발생한다.  
+    리터럴 문자열("")은 String Constant Pool에서 문자열을 찾기 때문에 빠르게 접근할 수 있다.   
+
+
+<details>
+<summary><strong>[String Constant Pool도 GC의 대상이 될까?]</strong></summary>
+<div markdown="1">
+
+<br>
+
+String Constant Pool은 원래 Permanent 영역에 위치했었는데,   
+이 영역은 사이즈가 고정된 메모리 영역이기 때문에 종종 OOM(Out Of Memory)문제가 발생했다고 한다.  
+
+이러한 이유로, Java 8부터는 Heap 영역으로 위치를 옮겼고, String Constant Pool에 존재하는  
+**참조되지 않는** 문자열은 GC의 대상이 될 수 있게 되었다.
+
+
+</div>
+</details>
+
+<br>
+
+### 📌 String에서 equals()와 == 의 차이점은 무엇인가요?
+
+<br>
+
+    🙋🏻‍♀️ String에서 ...
+
+    equals()는 비교하고자 하는 두 대상의 값이 같은지 판별한다.
+    == 연산자는 비교하고자 하는 두 대상의 주소 값이 같은지 판별한다.
+
+
+    String str1 = "Hello";
+    String str2 = "Hello";
+    🔥 str1과 str2는 문자열 리터럴이므로, 동일한 주소를 참조한다.
+    🔥 str1과 str2는 동일한 값을 가진다.
+
+    String str3 = new String("Hello");
+    String str4 = new String("Hello");
+    🔥 str3과 str4는 "Hello"라는 값을 가진 각각의 객체가 생성된다.
+    ➡ str3과 str4가 참조하는 주소는 다르다.
+    🔥 str3과 str4는 동일한 값을 가진다.
+
+    System.out.println(str1 == str2); // true
+
+    System.out.println(str3 == str4); // false
+    System.out.println(str3.equals(str4)); // true
+
+    System.out.println(str1 == str3); // false
+    System.out.println(str3.equals(str1)); // true
+
+</div>
+</details>
