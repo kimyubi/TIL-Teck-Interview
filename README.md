@@ -12,6 +12,7 @@
 - [Generic](https://aboard-woolen-7bf.notion.site/Generic-b33ded9ff586489e9446ca0cdf74eec6?pvs=4)
 - [인터페이스 vs 추상 클래스](https://www.notion.so/VS-19d7fb4b072a41d4875b70b93a934efc)
 - [Java Reflection API](https://aboard-woolen-7bf.notion.site/Java-Reflection-0de03d45c52a414d90d01a2f4cfaf92e?pvs=4)
+- [내부 클래스](https://aboard-woolen-7bf.notion.site/2fa568b2dba349579a661b2b6f0f6d92?pvs=4)
 
 
 <br>
