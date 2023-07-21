@@ -1146,3 +1146,54 @@ static 멤버는 프로그램이 실행되는 동안 메모리를 계속 점유�
 
 </div>
 </details>
+
+
+<details>
+<summary><strong><h3> 💡 클래스 멤버 변수 초기화 순서에 대해 설명해주세요. </h3></strong></summary>
+<div markdown="1">
+<br>
+
+### 1️⃣ **클래스 변수의 초기화**   
+클래스가 처음 메모리에 로딩될 때 **단 한번**, 차례대로 수행된다.  
+[순서]: 해당 타입의 기본 초기 값으로 자동 초기화 -> 명시적 초기화 -> 클래스 초기화 블럭
+
+### 2️⃣ **인스턴스 변수의 초기화**  
+**인스턴스를 생성할 때마다** 차례대로 수행된다.   
+[순서] : 해당 타입의 기본 초기 값으로 자동 초기화 -> 명시적 초기화 -> 인스턴스 초기화 블럭 -> 생성자
+
+
+<br>
+
+    class InitTest{
+        static int classVariable = 1;  // 명시적 초기화
+        int instanceVariable = 1;      // 명시적 초기화 
+        
+        static { classVariable = 2; } // 클래스 초기화 블럭
+        { instanceVariable = 2; }     // 인스턴스 초기화 블럭
+        
+        InitTest(){ // 생성자
+            instanceVariable = 3;     // 생성자
+        }
+    }
+
+
+### 🔥 클래스 초기화
+1. Class Loader가 **링킹 단계**에서 클래스에서 필요한 메모리를 할당하면서, classVariable을 int의 기본 초기 값인 **0**으로 초기화 한다.  
+
+2. Class Loader가 **초기화 단계**에서 명시적 초기화를 수행하여 classVariable을 **1**로 초기화한다.  
+
+3. 클래스 초기화 블록이 실행되어 classVariable을 2로 초기화한다.
+
+<br>
+
+### 🔥 인스턴스 초기화
+4. 인스턴스가 생성되면서 instanceVariable은 heap 영역에 존재하게 된다. 
+   classVariable을 int의 기본 초기 값인 **0**으로 초기화 한다.   
+
+5. 명시적 초기화를 수행하여 instanceVariable을 1로 초기화 한다.  
+6. 인스턴스 초기화 블록이 실행되어 instanceVariable을 2로 초기화한다.  
+7. 생성자를 통해 instanceVariable에 3이 저장된다.  
+
+<br>
+</div>
+</details>
