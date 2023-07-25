@@ -1335,3 +1335,167 @@ static 멤버는 프로그램이 실행되는 동안 메모리를 계속 점유�
 </div>
 </details>
 
+
+<details>
+<summary><strong><h3> 💡 Wrapper Class란 무엇이고 Primitive Type과의 차이는 무엇인가요? </h3></strong></summary>
+<div markdown="1">
+
+### Wrapper Class
+**기본 타입에 해당하는 데이터**를 **객체**로 포장해 주는 클래스  
+
+<br>
+
+### Wrapper Class vs Primitive Type
+
+**저장 방식**  
+- 기본 타입은 스택 영역에 값이 직접 저장된다.  
+
+- Wrapper Class는 힙 영역에 값을 감싼 객체가 저장된다.  
+
+<br>
+
+**사용 방법**  
+- 기본 타입은 값 자체를 가지고 있으므로 바로 산술 연산 등의 작업이 가능하다.  
+
+- Wrapper Class는 객체이므로 값에 접근하려면 **unboxing**을 통해 기본 타입으로 변환해야 하고, 기본 데이터 타입을 Wrapper Class로 감싸려면 **boxing** 과정이 필요하다.
+
+
+<br>
+
+### 📌 Boxing과 Unboxing의 동작 방식에 대한 자세한 설명을 해주세요.
+![Alt text](image-12.png)
+<br>
+
+    Boxing: Primitive Type의 값을 Wrapper Class의 인스턴스로 변환하는 과정  
+    
+    UnBoxing: Wrapper Class의 인스턴스에 저장된 값을 다시 Primitive Type의 값으로 꺼내는 과정
+
+<br>
+
+JDK 1.5부터는 Boxing과 UnBoxing이 필요한 상황에서 **자바 컴파일러가 이를 자동으로 처리**해 주며, 이렇게 자동화된 Boxing과 UnBoxing을 **AutoBoxing**과 **AutoUnBoxing**이라고 부른다.
+
+<br>
+
+### AutoBoxing
+컴파일러는 Primitive Type 값을 감싸는 Wrapper Class의 **객체를 생성하는 메소드** 를 자동으로 호출하여 객체를 생성한다.     
+
+### AutoUnBoxing
+컴파일러는 Wrapper Class내의 자신에 해당하는 기본 데이터 타입 값을 반환하기 위한 **getter 메서드**를 자동으로 호출하여 객체 안에 있는 Primitive Type의 값을 반환한다. 
+
+
+<br>
+
+    [📌AutoBoxing]
+    int num = 10;             //  Primitive Type, int
+    Integer wrappedNum = num; // Auto Boxing
+
+    컴파일러는 위의 코드를 아래와 같이 변환한다.
+    int num = 10;            
+    Integer wrappedNum = Integer.valueOf(num); 
+
+    ======================================================
+
+    [📌AutoUnBoxing]
+    Integer wrappedNum = 20;   // Wrapper Class Integer
+    int num = wrappedNum;      // Auto Unboxing 
+
+    컴파일러는 위의 코드를 아래와 같이 변환한다.
+    Integer wrappedNum = Integer.valueOf(20);   
+    int num = wrappedNum.intValue();      
+
+
+<br>
+
+### 📌Wrapper Class를 사용하는 상황과 Primitive Type을 사용하는 상황의 장단점은 무엇인가요?
+
+<br>
+
+### Wrapper Class
+
+**😊 장점**
+- Wrapper Class는 객체이므로 객체 지향 프로그래밍의 특성을 활용할 수 있다. 
+
+- Primitive Type은 값이 반드시 존재하지만, Wrapper Class는 객체이므로 **null 값** 을 가질 수 있다. 이는 **데이터의 누락**을 나타내는데 유용하며, **예외 처리** 에서 유용하게 활용될 수 있다.
+
+- Wrapper Class는 **제네릭**과 함께 사용할 수 있어서 **타입 안정성**을 확보할 수 있다.
+
+
+**😅 단점**
+-  객체 생성과 메모리 할당 등의 추가 작업으로 인해 Primitive Type에 비해 성능이 다소 저하될 수 있다.
+
+- 객체로 감싸기 때문에 기본 데이터 타입보다 더 많은 메모리를 사용하게 된다.
+
+
+<br>
+
+### Primitive Type
+
+**😊 장점**
+- 메모리 절약, Wrapper Class와 비교하여 성능 우위
+
+- 연산에 특화되어 있어서 연산에서 유리하다.
+
+
+**😅 단점**
+- Wrapper 클래스의 장점을 활용할 수 없는 것이 Primitive Type의 단점이다.
+
+
+<br>
+<br>
+
+### 📌 어떤 경우에 Wrapper Class를 사용해야 할까요?
+<br>
+
+- **컬렉션 사용**  
+ 기본 데이터 타입은 컬렉션에 직접적으로 저장할 수 없다. 하지만 Wrapper Class를 사용하면 기본 데이터 타입을 객체로 감싸서 컬렉션에 저장할 수 있다. 
+
+- **라이브러리와 API 사용**  
+  Java의 라이브러리나 API들은 대부분 Wrapper Class를 사용하도록 설계되어 있다.
+
+- **제네릭 사용**
+
+- **Null 값 처리**
+
+- **객체 지향적 특성 활용**
+
+
+</div>
+</details>
+
+
+<details>
+<summary><strong><h3> 💡 싱글톤 패턴에 대해 설명해주세요. </h3></strong></summary>
+<div markdown="1">
+
+<br>
+
+    디자인 패턴 중 하나로, 어떤 클래스가 최초 한 번만 메모리를 할당하고 그 메모리에 인스턴스를 생성하여 자기 자신의 인스턴스를 반환하도록 설계하는 패턴이다. 
+
+    이렇게 하면 어플리케이션 전체에서 하나의 공유된 인스턴스만 사용하게 되어 메모리 낭비를 줄이고, 객체의 일관성과 무결성을 보장할 수 있다.
+
+<br>
+
+- 왜 싱글톤 패턴을 사용하나요?  
+- 싱글톤 패턴의 장점과 단점은 무엇인가요?  
+- 싱글톤 패턴을 구현하는 방법은 어떤 것들이 있나요?  
+- 싱글톤 패턴을 멀티스레드 환경에서 어떻게 보호해야 할까요?  
+- 싱글톤 패턴을 사용하여 자원을 공유하는 예시는 무엇이 있나요?  
+- 싱글톤이 깨지는 상황과 이를 극복하는 방법에 대해 설명해주세요.
+  
+<br>
+
+### [🔥 위 질문에 대한 대답을 찾아보자(싱글톤 패턴)](https://aboard-woolen-7bf.notion.site/Singleton-e0a7969bd3ce41d492fe03708fa5c639?pvs=4)
+
+
+</div>
+</details>
+
+<details>
+<summary><strong><h3> 💡 객체 지향 설계의 5원칙에 대해 설명해주세요. </h3></strong></summary>
+<div markdown="1">
+
+### [🔥 위 질문에 대한 대답을 찾아보자(객체 지향 설계의 5원칙)](https://aboard-woolen-7bf.notion.site/5-SOLID-6055015ee39643b3a0efe5380e98210a?pvs=4)
+
+
+</div>
+</details>
