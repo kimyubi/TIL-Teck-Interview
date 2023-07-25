@@ -16,6 +16,7 @@
 - [Error와 Exception의 차이](https://aboard-woolen-7bf.notion.site/Error-Exception-190668c457b44a3c827d8c864d4c2c1a?pvs=4)
 - [Java의 Exception 클래스](https://aboard-woolen-7bf.notion.site/Java-Exception-9bbd7a0a42c34480831c7a90664ec60d?pvs=4)
 - [Java의 예외 처리 방법](https://aboard-woolen-7bf.notion.site/e624c8f59a014ffd99618b45b2b19ba0?pvs=4)
+- [객체 지향 설계의 5원칙 SOLID](https://aboard-woolen-7bf.notion.site/5-SOLID-6055015ee39643b3a0efe5380e98210a?pvs=4)
 
 
 <br>
