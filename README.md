@@ -22,8 +22,9 @@
 <br>
 
 ## 📌 Operating System
-[프로세스](https://aboard-woolen-7bf.notion.site/df36bbcd16b240efbe1078e8c39a80ea?pvs=4)
-
+- [프로세스](https://aboard-woolen-7bf.notion.site/df36bbcd16b240efbe1078e8c39a80ea?pvs=4)
+- [컨텍스트 스위칭](https://aboard-woolen-7bf.notion.site/230522-Context-Switching-2de45a17b425470987af98288b26dd80?pvs=4)
+- [IPC](https://aboard-woolen-7bf.notion.site/0529-IPC-391a4a5cb6844d7fb7d37bd430d869e1?pvs=4)
 
 <br>
 <br>
