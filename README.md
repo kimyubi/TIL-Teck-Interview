@@ -38,4 +38,4 @@
 
 
 ## OS Teck Interview
-- [운영체제] https://github.com/kimyubi/TIL-Teck-Interview/blob/main/Java/%5BOS%5D%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.md
+- [운영체제](https://github.com/kimyubi/TIL-Teck-Interview/blob/main/Java/%5BOS%5D%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.md)
