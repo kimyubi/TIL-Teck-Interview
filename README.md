@@ -31,7 +31,11 @@
 <br>
 <br>
 
-## 📌 Java Teck Interview
+## 💡 Java Teck Interview
 - [JVM](https://github.com/kimyubi/TIL-Teck-Interview/blob/main/Java/%5BJava%5D%20JVM.md)
 - [Garbage Collection](https://github.com/kimyubi/TIL-Teck-Interview/blob/main/Java/%5BJava%5D%20Garbage_Collection.md)
 - [Java](https://github.com/kimyubi/TIL-Teck-Interview/blob/main/Java/%5BJava%5D%20Java.md)
+
+
+## OS Teck Interview
+- [운영체제] https://github.com/kimyubi/TIL-Teck-Interview/blob/main/Java/%5BOS%5D%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.md
