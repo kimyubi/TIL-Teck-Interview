@@ -27,7 +27,8 @@
 - [IPC](https://aboard-woolen-7bf.notion.site/0529-IPC-391a4a5cb6844d7fb7d37bd430d869e1?pvs=4)
 - [프로세스 스케줄링](https://aboard-woolen-7bf.notion.site/ccf272ae65f742619df7364d073d9acd?pvs=4)
 - [뮤텍스(Mutex)](https://aboard-woolen-7bf.notion.site/Mutex-a4d0aad388d84f50b786a5e211a5a763?pvs=4)
-
+- [세마포어(Semaphore)](https://aboard-woolen-7bf.notion.site/Semaphore-d611f58914d242a3a7cd630e12694037?pvs=4)
+- [Eventcount/Sequencer](https://aboard-woolen-7bf.notion.site/Eventcount-Sequencer-b9757ab274d84997a5f962410be6ef85?pvs=4)
 <br>
 <br>
 <br>
