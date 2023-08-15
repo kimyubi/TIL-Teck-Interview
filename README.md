@@ -31,6 +31,7 @@
 - [뮤텍스 VS 세마포어](https://aboard-woolen-7bf.notion.site/VS-d352264d61804d98afbf7dd2efbcb3b3?pvs=4)
 - [Eventcount/Sequencer](https://aboard-woolen-7bf.notion.site/Eventcount-Sequencer-b9757ab274d84997a5f962410be6ef85?pvs=4)
 - [스핀 락(Spin lock)](https://aboard-woolen-7bf.notion.site/Spin-lock-58cfb57b15c44d70887afd37a154699c?pvs=4)
+- [모니터](https://aboard-woolen-7bf.notion.site/9193042be448462ab95b507b9c552a8d?pvs=4)
 <br>
 <br>
 <br>
