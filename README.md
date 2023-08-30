@@ -33,6 +33,7 @@
 - [스핀 락(Spin lock)](https://aboard-woolen-7bf.notion.site/Spin-lock-58cfb57b15c44d70887afd37a154699c?pvs=4)
 - [모니터](https://aboard-woolen-7bf.notion.site/9193042be448462ab95b507b9c552a8d?pvs=4)
 - [메모리 관리](https://aboard-woolen-7bf.notion.site/3da9eef340ca43a196999ef657c9ca08?pvs=4)
+- [페이징](https://aboard-woolen-7bf.notion.site/cfce300a3b134484bbd316e3786882d5?pvs=4)
 <br>
 <br>
 <br>
