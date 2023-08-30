@@ -753,3 +753,23 @@ B 프로세스는 실행 시간보다 대기 시간이 훨씬 길다.
 
 </div>
 </details>
+
+<details>
+<summary><strong><h3> 💡 뮤텍스와 세마포어의 차이점은 무엇인가요?</h3></strong></summary>
+<div markdown="1">
+
+- +) 이진 세마포어와 뮤텍스의 차이에 대해 설명해 주세요
+### [🔥 위 질문에 대한 대답을 찾아보자(뮤텍스 VS 세마포어)](https://aboard-woolen-7bf.notion.site/VS-d352264d61804d98afbf7dd2efbcb3b3?pvs=4)
+
+</div>
+</details>
+
+
+<details>
+<summary><strong><h3> 💡 프로세스 혹은 스레드의 동기화란 무엇인가요?</h3></strong></summary>
+<div markdown="1">
+
+<br>
+  
+</div>
+</details>
