@@ -892,3 +892,41 @@ B 프로세스는 실행 시간보다 대기 시간이 훨씬 길다.
 
 </div>
 </details>
+
+
+<details>
+<summary><strong><h3> 💡 페이징과 세그멘테이션에 대해 자세히 설명해주세요.</h3></strong></summary>
+<div markdown="1">
+
+
+### [🔥 위 질문에 대한 대답을 찾아보자(페이징)](https://aboard-woolen-7bf.notion.site/cfce300a3b134484bbd316e3786882d5?pvs=4)
+
+### [🔥 위 질문에 대한 대답을 찾아보자(세그멘테이션)](https://aboard-woolen-7bf.notion.site/baa996448c5e431ba99a0c0a9b0051c7?pvs=4)
+
+
+### ✅ 페이징
+- 프로그램을 고정된 크기의 블록(page)으로 분할한다.
+- 메모리를 block size로 미리 분할한다.(page frame)
+- 외부 단편 화 문제가 없다.
+- 메모리의 통합과 압축이 불필요하다.
+- 프로그램의 논리적 구조를 고려하지 않기 때문에 page sharing/protection이 복잡하다.
+- 필요한 page만 page frame에 적재하여 사용한다. → 메모리의 효율적 활용
+- page mapping overhead
+    - 메모리 공간 및 추가적인 메모리 접근이 필요하다.
+    - 전용 HW(TLB) 활용으로 해결 가능하다. → HW 비용 증가
+
+<br>
+
+### ✅ 세그멘테이션
+- 프로그램을 논리 단위로 분할한다.(segment)
+- 메모리를 동적으로 분할한다.
+- 내부 단편화 문제가 발생하지 않는다.
+- 세그먼트 공유 및 보호가 용이하다.
+- Paging system 대비 관리 overhead가 크다.
+- 필요한 segment만 메모리에 적재하여 사용하기 때문에 메모리를 효율적으로 활용할 수 있다.
+- Segment mapping overhead
+    - 메모리 공간 및 추가적인 메모리 접근이 필요하다.
+    - 전용 HW(TLB) 활용으로 해결 가능하다.
+
+</div>
+</details>
