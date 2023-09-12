@@ -991,8 +991,24 @@ Page Fault가 발생하면 운영 체제는 필요한 페이지를 디스크에�
 </details>
 
 <details>
-<summary><strong><h3> 💡 TLB는 무엇인가요? </h3></strong></summary>
+<summary><strong><h3> 💡 페이지 교체 알고리즘에 대해 설명해주세요. </h3></strong></summary>
 <div markdown="1">
+
+<br>
+
+    🔥 Page Fault가 발생하여 프로세스가 필요로 하는 페이지를 메모리에 로드하려고 할 때,   
+       빈 프레임이 없는 경우 이전에 메모리에 있던 페이지 중 하나를 선택하여 교체하게 된다.
+       이때, 어떤 페이지를 교체할지 결정하는 알고리즘을 페이지 교체 알고리즘이라고 한다.
+
+
+<br>
+
+    💡 페이지 교체 알고리즘은 Page Fault Rate를 줄이는 것을 목표로 한다.
+
+
+<br>
+
+### [🔥 페이지 교체 알고리즘의 종류](https://aboard-woolen-7bf.notion.site/d78abc07af91437db7eb190cad8a5b35?pvs=4)
 
 
 </div>

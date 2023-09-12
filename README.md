@@ -35,6 +35,8 @@
 - [메모리 관리](https://aboard-woolen-7bf.notion.site/3da9eef340ca43a196999ef657c9ca08?pvs=4)
 - [페이징](https://aboard-woolen-7bf.notion.site/cfce300a3b134484bbd316e3786882d5?pvs=4)
 - [세그멘테이션](https://aboard-woolen-7bf.notion.site/baa996448c5e431ba99a0c0a9b0051c7?pvs=4)
+- [페이지 교체 알고리즘](https://aboard-woolen-7bf.notion.site/d78abc07af91437db7eb190cad8a5b35?pvs=4)
+  
 <br>
 <br>
 <br>
