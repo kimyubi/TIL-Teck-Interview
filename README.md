@@ -37,6 +37,13 @@
 - [페이징](https://aboard-woolen-7bf.notion.site/cfce300a3b134484bbd316e3786882d5?pvs=4)
 - [세그멘테이션](https://aboard-woolen-7bf.notion.site/baa996448c5e431ba99a0c0a9b0051c7?pvs=4)
 - [페이지 교체 알고리즘](https://aboard-woolen-7bf.notion.site/d78abc07af91437db7eb190cad8a5b35?pvs=4)
+
+<br>
+<br>
+
+## 📌 Database  
+
+- [트랜잭션](https://aboard-woolen-7bf.notion.site/b8393dcf51b8432bb09116c38441e41e?pvs=4)
   
 <br>
 <br>
